@@ -1,0 +1,26 @@
+.car-listing > a {
+  margin: 10px;
+  display: flex;
+  box-shadow: 1px 1px 1px 1px lightgray;
+  /* justify-content: space-between; */
+}
+
+.car-listing > a:hover {
+  box-shadow: 2px 2px 2px 2px lightgray;
+}
+
+.car-listing img {
+  display: block;
+  height: 200px;
+  width: 300px;
+};
+
+.listing-stats {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.listing-page-num {
+  margin: 5px;
+}

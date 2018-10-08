@@ -12,13 +12,13 @@ export const incrementViews = (vin) => (
   })
 );
 
-export const postVehicle = vehicle => (
+export const postVehicle = vin => (
   $.ajax({
     method: 'post',
     url: '/api/vehicles',
     data: {
       vehicle: {
-        vin: vehicle.vin
+        vin: vin
       }
     }
   })

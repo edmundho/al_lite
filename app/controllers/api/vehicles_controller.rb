@@ -3,14 +3,13 @@ class Api::VehiclesController < ApplicationController
     @vehicle = Vehicle.new(vehicle_params)
 
     if @vehicle.save
-      render json: @vehicle 
+      render json: @vehicle.views
     else
       render json: @vehicle.errors.full_messages, status: 422
     end
   end
 
   def show
-    # @vehicle = Vehicle.find(params[:id])
     @vehicle = Vehicle.find_by(vin: params[:vin])
     if @vehicle
       render json: @vehicle.views
@@ -20,10 +19,9 @@ class Api::VehiclesController < ApplicationController
   end
 
   def update
-    # @vehicle = Vehicle.find(params[:id])
     @vehicle = Vehicle.find_by(vin: params[:vin])
 
-    render json: @vehicle if @vehicle.update(views: @vehicle.views + 1)
+    render json: @vehicle.views if @vehicle.update(views: @vehicle.views + 1)
   end
 
   def vehicle_params

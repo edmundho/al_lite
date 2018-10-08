@@ -32,7 +32,6 @@ class ListingItem extends Component {
             <p className="listing-miles">{car.mileage}</p>
             <p className="listing-loc">{car.city}, {car.state}</p>
             <p>{viewed}</p>
-            {/* <p>viewed {this.state.views} times</p> */}
           </div>
         </Link>
       </div>

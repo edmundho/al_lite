@@ -4,3 +4,8 @@ html {
   background: whitesmoke;
 }
 
+
+#map-container {
+  height: 500px;
+  widtH: 500px;
+}

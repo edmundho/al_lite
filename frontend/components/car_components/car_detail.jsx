@@ -28,10 +28,32 @@ class CarDetail extends Component {
     });
   }
 
+  componentDidMount () {
+    window.scrollTo(0, 0);
+
+    const latitude = this.props.car.lat;
+    const longitude = this.props.car.lon;
+    const latLng = { lat: latitude, lng: longitude };
+    
+    const mapOptions = {
+      center: latLng,
+      zoom: 13
+    };
+
+    const map = this.refs.map;
+    this.map = new google.maps.Map(map, mapOptions);
+
+    const marker = new google.maps.Marker({
+      position: latLng,
+      animation: google.maps.Animation.DROP
+    });
+
+    marker.setMap(this.map);
+  }
+
   render () {
     const car = this.props.car;
     const views = this.state.views;
-    // console.log(views);
 
     const contents = Object.keys(car).map((key, i) => {
       return (
@@ -41,9 +63,11 @@ class CarDetail extends Component {
     
     return (
       <div>
+        <button onClick={() => this.props.history.goBack()}>Back</button>
         <h1>
           VIEWED: {views} times
         </h1>
+        <div id="map-container" ref="map" />
         <ul>
           {contents}
         </ul>
@@ -53,3 +77,4 @@ class CarDetail extends Component {
 }
 
 export default CarDetail;
+

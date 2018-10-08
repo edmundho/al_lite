@@ -2,16 +2,26 @@ class Api::VehiclesController < ApplicationController
   def create
     @vehicle = Vehicle.new(vehicle_params)
 
-    render json: @vehicle if @vehicle.save
+    if @vehicle.save
+      render json: @vehicle 
+    else
+      render json: @vehicle.errors.full_messages, status: 422
+    end
   end
 
   def show
     # @vehicle = Vehicle.find(params[:id])
     @vehicle = Vehicle.find_by(vin: params[:vin])
+    if @vehicle
+      render json: @vehicle.views
+    else
+      render json: 0
+    end
   end
 
   def update
-    @vehicle = Vehicle.find(params[:id])
+    # @vehicle = Vehicle.find(params[:id])
+    @vehicle = Vehicle.find_by(vin: params[:vin])
 
     render json: @vehicle if @vehicle.update(views: @vehicle.views + 1)
   end

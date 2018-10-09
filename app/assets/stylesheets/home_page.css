@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:600');
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.home-page-logo {
+  font-size: 75px;
+  padding: 10px;
+  display: flex;
+  letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.home-page-logo > div:nth-child(7) {
+  transform: rotate(-28deg) translateX(-2px) translateY(-3px);
+}
+
+.blue {
+  color: rgb(61, 132, 240);
+}
+
+.red {
+  color: rgb(238, 62, 57);
+}
+
+.yellow {
+  color: rgb(253, 188, 49);
+}
+
+.green {
+  color: rgb(41, 169, 89);
+}
+
+.home-page-links {
+  align-self: flex-end;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.home-page-links a {
+  padding: 10px;
+  text-decoration: none;
+}
+
+.home-page-center {
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form input[type="text"] {
+  padding: 6px;
+  margin: 3px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px lightgray;
+}
+
+.search-form input[type="text"]:focus {
+  outline: none;
+}
+
+.search-form input[type="text"]:hover {
+  box-shadow: 2px 2px 1px 1px lightgray;
+  border: none;
+}
+
+.search-form input[type="submit"] {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid whitesmoke;
+  border-radius: none;
+  width: 200px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.search-form input[type="submit"]:hover {
+  border: 1px solid gray;
+  background: rgb(251, 251, 251);
+}

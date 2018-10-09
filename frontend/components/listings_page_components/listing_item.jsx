@@ -16,6 +16,13 @@ class ListingItem extends Component {
     checkViews(vin).then(response => this.setState({ views: response }));
   }
 
+  componentWillReceiveProps (newProps) {
+    if (newProps !== this.props.car) {
+      const newVin = newProps.car.vin;
+      checkViews(newVin).then(response => this.setState({ views: response }));
+    }
+  }
+
   render () {
     const car = this.props.car;
     const viewed = this.state.views 

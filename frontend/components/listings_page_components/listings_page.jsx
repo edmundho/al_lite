@@ -16,6 +16,10 @@ class Listings extends Component {
       this.props.receiveCars(newProps.page, this.props.min, this.props.max);
     }
   }
+
+  componentDidUpdate () {
+    window.scrollTo(0, 0);
+  }
   
   render () {
     let count = 0;

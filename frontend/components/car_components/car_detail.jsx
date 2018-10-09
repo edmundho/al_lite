@@ -4,6 +4,7 @@ import {
   checkViews, 
   incrementViews, 
   postVehicle } from '../../util/vehicle_api_util';
+import Navbar from '../nav_bar';
 
 class CarDetail extends Component {
   constructor (props) {
@@ -12,6 +13,8 @@ class CarDetail extends Component {
     this.state = {
       views: null,
     };
+
+    this.goBack = this.goBack.bind(this);
   }
 
   componentWillMount () {
@@ -53,22 +56,17 @@ class CarDetail extends Component {
     marker.setMap(this.map);
   }
 
+  goBack () {
+    this.props.history.goBack();
+  }
+
   render () {
     const car = this.props.car;
     const views = this.state.views;
 
     return (
       <div>
-        <div className="navbar">
-          <button onClick={() => this.props.history.goBack()}>
-            &#12296; &nbsp; Back
-          </button>
-          <div>
-            <Link to="/">Home</Link>
-            <Link to="/">Sign Up</Link>
-            <Link to="/">Log In</Link>
-          </div>
-        </div>
+        <Navbar back={this.goBack} />
         <div className="vehicle-page">
           <div className="vehicle-overview">
             <img src={car.primary_photo_url} alt={car.model} />

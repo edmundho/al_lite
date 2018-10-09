@@ -27,20 +27,24 @@ class ListingItem extends Component {
     const car = this.props.car;
     const viewed = this.state.views 
       ? (<p><i className="fas fa-eye"></i>&nbsp;{this.state.views}</p>) 
-      : '';
+      : (<p>&nbsp;</p>);
     
     return (
       <div className="car-listing">
         <Link to={`/car/${car.vin}`}>
           <img src={car.primary_photo_url} alt={car.model} />
           <div className="listing-stats">
-            <span className="listing-title">
-              {car.year} {car.make} {car.model}
-            </span>
-            <span className="listing-price">{car.price}</span>
-            <p className="listing-miles">{car.mileage}</p>
-            <p className="listing-loc">{car.city}, {car.state}</p>
+            <div>
+              <div className="listing-title">
+                {car.year} {car.make} {car.model}
+              </div>
+              <div className="listing-price">{car.price}</div>
+            </div>
+            <div>
+              <p className="listing-miles">{car.mileage}</p>
+            </div>
             <div>{viewed}</div>
+            <div className="listing-loc">{car.city}, {car.state}</div>
           </div>
         </Link>
       </div>

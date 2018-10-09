@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A lite version of Autolist's web app. React/Redux frontend & Rails/PostgreSQL backend
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+* 3 pages: home, search results, listing detail
+* Search listings with min & max price filter on home page
+* Search results are displayed with 'Times viewed' statistic for each time a listing was clicked into and viewed
+* Listing detail shows map of seller
 
-* System dependencies
+## Setup instructions
 
-* Configuration
+* npm i
+* bundle install
 
-* Database creation
+## Other Info
 
-* Database initialization
+* Time spent: ~9-10 hrs
+* Approaches: 
+  * Used Rails backend to keep track of times a listing was viewed.
+  * Redux on the frontend to manage 20 listings at a time between several components.
 
-* How to run the test suite
+## Future features
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Enable ability to refresh on vehicle details page
+* Add more details on vehicle details page

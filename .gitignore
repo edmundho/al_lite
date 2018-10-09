@@ -31,3 +31,5 @@ bundle.js.map
 
 .gitignore
 package-lock.json
+
+.env

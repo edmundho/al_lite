@@ -1,29 +1,88 @@
+.listings-page {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.listings-page h3 {
+  padding: 10px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  padding: 10px;
+  box-shadow: 1px 1px 1px 1px lightgray;
+  height: 180px;
+  margin: 10px;
+  background: white;
+}
+
 .car-listing > a {
   margin: 10px;
   display: flex;
   box-shadow: 1px 1px 1px 1px lightgray;
+  background: white;
+  color: darkslategray;
+  justify-content: space-between;
+}
+
+.car-listing > a > div {
+  width: 100%;
+  display: flex;
+  padding: 25px;
 }
 
 .car-listing a {
   text-decoration: none;
+  display: flex;
+}
+
+.car-listing a > img {
+  height: 200px;
+  width: 300px;
 }
 
 .car-listing > a:hover {
   box-shadow: 2px 2px 2px 2px lightgray;
 }
 
-.car-listing img {
-  display: block;
-  height: 200px;
-  width: 300px;
-};
-
 .listing-stats {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+}
+
+.listing-stats > div {
+  display: flex;
   justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+
+.listing-stats > div:first-child {
+  font-size: 22px;
+}
+
+.listing-price {
+  padding: 0 10px;
 }
 
 .listing-page-num {
   margin: 5px;
+}
+
+.paginator {
+  padding: 15px;
+}
+
+.paginator a {
+  color: darkslategray;
+  text-decoration: none;
+}
+
+.active {
+  font-weight: 700;
 }

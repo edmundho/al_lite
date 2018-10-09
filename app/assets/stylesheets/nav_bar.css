@@ -8,6 +8,7 @@
   justify-content: space-between;  
   align-items: center;
   font-family: 'Roboto', sans-serif;
+  color: darkslategray;
 }
 
 .navbar > div {
@@ -15,8 +16,9 @@
 }
 
 .navbar a {
-  padding: 10px;
+  margin: 18px;
   text-decoration: none;
+  font-size: 18px;
 }
 
 .navbar button {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   checkViews, 
   incrementViews, 
@@ -37,7 +38,8 @@ class CarDetail extends Component {
     
     const mapOptions = {
       center: latLng,
-      zoom: 13
+      zoom: 13,
+      streetViewControl: false,
     };
 
     const map = this.refs.map;
@@ -55,22 +57,46 @@ class CarDetail extends Component {
     const car = this.props.car;
     const views = this.state.views;
 
-    const contents = Object.keys(car).map((key, i) => {
-      return (
-        <li key={i}>{key}</li>
-      );
-    });
-    
     return (
       <div>
-        <button onClick={() => this.props.history.goBack()}>Back</button>
-        <h1>
-          VIEWED: {views} times
-        </h1>
-        <div id="map-container" ref="map" />
-        <ul>
-          {contents}
-        </ul>
+        <div className="navbar">
+          <button onClick={() => this.props.history.goBack()}>
+            &#12296; &nbsp; Back
+          </button>
+          <div>
+            <Link to="/">Home</Link>
+            <Link to="/">Sign Up</Link>
+            <Link to="/">Log In</Link>
+          </div>
+        </div>
+        <div className="vehicle-page">
+          <div className="vehicle-overview">
+            <img src={car.primary_photo_url} alt={car.model} />
+            <div>
+              <div>
+                <h1>
+                  {car.year} {car.make} {car.model}
+                </h1>
+                <h2>{car.mileage}</h2>
+              </div>
+              <div>
+                <h1>{car.price}</h1>
+                <h2>
+                  <i className="fas fa-eye" />
+                  &nbsp;
+                  {views}
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div className="seller-info">
+            <div>
+              <h2>Seller Info</h2>
+              <h3>{car.dealer_name}</h3>
+            </div>
+            <div id="map-container" ref="map" />
+          </div>
+        </div>
       </div>
     );
   }

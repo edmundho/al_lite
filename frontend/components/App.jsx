@@ -4,11 +4,13 @@ import { HashRouter, Route } from 'react-router-dom';
 import HomePageContainer from './home_page_components/home_page_container';
 import ListingsPageContainer from './listings_page_components/listings_page_container';
 import CarDetailContainer from './car_components/car_detail_container';
+import { NavBar } from './nav_bar';
 
 export default ({ store }) => (
   <Provider store={store}>
     <HashRouter>
       <div>
+        {/* <Route path="/" component={NavBar} /> */}
         <Route
           path="/listings/:min/:max/:page"
           component={ListingsPageContainer}

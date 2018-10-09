@@ -18,7 +18,9 @@ class ListingItem extends Component {
 
   render () {
     const car = this.props.car;
-    const viewed = this.state.views ? `This listing was viewed ${this.state.views} times.` : ' ';
+    const viewed = this.state.views 
+      ? (<p><i className="fas fa-eye"></i>&nbsp;{this.state.views}</p>) 
+      : '';
     
     return (
       <div className="car-listing">
@@ -31,7 +33,7 @@ class ListingItem extends Component {
             <span className="listing-price">{car.price}</span>
             <p className="listing-miles">{car.mileage}</p>
             <p className="listing-loc">{car.city}, {car.state}</p>
-            <p>{viewed}</p>
+            <div>{viewed}</div>
           </div>
         </Link>
       </div>

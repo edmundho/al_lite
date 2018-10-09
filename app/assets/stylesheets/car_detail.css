@@ -1,0 +1,58 @@
+.vehicle-page {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vehicle-page h1 {
+  font-size: 25px;
+  padding: 5px;
+}
+
+.vehicle-page h2 {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.vehicle-page h3 {
+  font-size: 16px;
+  padding: 5px;
+}
+
+.vehicle-page-back {
+  width: 700px;
+}
+
+.vehicle-overview {
+  box-shadow: 1px 1px 1px 1px lightgray;
+  margin: 15px;
+  background: white;
+}
+
+.vehicle-overview > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.vehicle-overview img {
+  width: 700px;
+}
+
+.seller-info {
+  width: 700px;
+  background: white;
+  box-shadow: 1px 1px 1px 1px lightgray;
+}
+
+.seller-info > div {
+  padding: 15px;
+}
+
+#map-container {
+  height: 500px;
+}
+

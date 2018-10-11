@@ -1,5 +1,8 @@
 # README
 
+
+Check out the app [live](https://al-lite.herokuapp.com/#/)!
+
 A lite version of Autolist's web app. React/Redux frontend & Rails/PostgreSQL backend
 
 ## Features

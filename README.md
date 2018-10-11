@@ -14,6 +14,7 @@ A lite version of Autolist's web app. React/Redux frontend & Rails/PostgreSQL ba
 * Type the following into terminal:
   * npm i
   * bundle install
+  * rails db:create
   * rails server
 * Then go to http://localhost:3000/#/ in browser
 
